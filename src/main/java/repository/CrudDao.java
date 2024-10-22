@@ -1,4 +1,6 @@
 package repository;
 
-public interface CrudDao {
+public interface CrudDao<T> extends SuperDao{
+
+    void save(T t);
 }
