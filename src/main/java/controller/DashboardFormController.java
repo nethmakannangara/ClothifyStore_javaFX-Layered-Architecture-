@@ -50,15 +50,14 @@ public class DashboardFormController {
 
     @FXML
     void btnAddSupplierOnAction(ActionEvent event) {
-//        Stage supplierForm;
-//        try {
-//            supplierForm = new Stage();
-//            supplierForm.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/supplier_form.fxml"))));
-//            supplierForm.show();
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-
+        Stage supplierForm;
+        try {
+            supplierForm = new Stage();
+            supplierForm.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/supplier_form.fxml"))));
+            supplierForm.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML

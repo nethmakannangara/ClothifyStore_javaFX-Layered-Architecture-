@@ -1,5 +1,8 @@
 package entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.*;
 
 @Getter
@@ -7,7 +10,10 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Entity(name = "supplier")
+@Table(name = "supplier")
 public class SupplierEntity {
+    @Id
     private String supplierId;
     private String name;
     private String address;

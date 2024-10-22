@@ -1,5 +1,5 @@
 package utill;
 
 public enum HibernateUtilType {
-    ADMIN,EMPLOYEE,ITEM
+    ADMIN,EMPLOYEE,ITEM,SUPPLIER
 }

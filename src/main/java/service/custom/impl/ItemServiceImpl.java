@@ -80,17 +80,17 @@ public class ItemServiceImpl implements ItemService {
     }
 
     public String generateId() {
-        String adminId = "1";
+        String itemId = "1";
         if(checkLastId()!=null){
             Scanner id = new Scanner(checkLastId());
             id.useDelimiter("[A-Z]");
             while (id.hasNext()){
-                adminId = id.next();
+                itemId = id.next();
             }
-            int adminCount = Integer.parseInt(adminId);
+            int adminCount = Integer.parseInt(itemId);
             return String.format("ITEM%03d", ++adminCount);
         }else {
-            int adminCount = Integer.parseInt(adminId);
+            int adminCount = Integer.parseInt(itemId);
             return String.format("ITEM%03d", adminCount);
         }
     }

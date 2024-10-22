@@ -45,18 +45,18 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     public String generateId() {
-        String adminId = "1";
+        String employeeId = "1";
         if(checkLastId()!=null){
             Scanner id = new Scanner(checkLastId());
             id.useDelimiter("[A-Z]");
             while (id.hasNext()){
-                adminId = id.next();
+                employeeId = id.next();
             }
-            int adminCount = Integer.parseInt(adminId);
-            return String.format("E%04d", ++adminCount);
+            int employeeCount = Integer.parseInt(employeeId);
+            return String.format("EMP%04d", ++employeeCount);
         }else {
-            int adminCount = Integer.parseInt(adminId);
-            return String.format("E%04d", adminCount);
+            int employeeCount = Integer.parseInt(employeeId);
+            return String.format("EMP%04d", employeeCount);
         }
     }
 
@@ -73,14 +73,14 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public boolean checkDuplicateEmail(String email) {
         List<EmployeeEntity> resultSet = employeeDao.getAll();
-        List<Admin> adminList = new ArrayList<>();
+        List<Employee> employeeList = new ArrayList<>();
 
-        resultSet.forEach(adminEntity->{
-            adminList.add(new ModelMapper().map(adminEntity,Admin.class));
+        resultSet.forEach(employeeEntity->{
+            employeeList.add(new ModelMapper().map(employeeEntity,Employee.class));
         });
 
-        for (int i = 0; i < adminList.size(); i++) {
-            if(adminList.get(i).getEmail().equals(email)){
+        for (int i = 0; i < employeeList.size(); i++) {
+            if(employeeList.get(i).getEmail().equals(email)){
                 new Alert(Alert.AlertType.ERROR,"This email already added..").show();
                 return false;
             }

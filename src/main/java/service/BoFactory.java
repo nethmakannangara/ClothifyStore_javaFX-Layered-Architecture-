@@ -5,6 +5,7 @@ import service.custom.AdminService;
 import service.custom.impl.AdminServiceImpl;
 import service.custom.impl.EmployeeServiceImpl;
 import service.custom.impl.ItemServiceImpl;
+import service.custom.impl.SupplierSeriviceImpl;
 import utill.ServiceType;
 
 public class BoFactory {
@@ -22,6 +23,7 @@ public class BoFactory {
             case ADMIN : return (T) AdminServiceImpl.getInstance();
             case EMPLOYEE:return (T) EmployeeServiceImpl.getInstance();
             case ITEM:return (T) ItemServiceImpl.getInstance();
+            case SUPPLIER:return (T) SupplierSeriviceImpl.getInstance();
         }
         return null;
     }
