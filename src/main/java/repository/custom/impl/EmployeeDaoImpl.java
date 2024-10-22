@@ -15,10 +15,11 @@ public class EmployeeDaoImpl implements EmployeeDao {
     //--------Singleton----------//
     private static EmployeeDaoImpl instance;
 
-    private EmployeeDaoImpl(){}
+    private EmployeeDaoImpl() {
+    }
 
-    public static EmployeeDaoImpl getInstance(){
-        return null==instance?instance = new EmployeeDaoImpl():instance;
+    public static EmployeeDaoImpl getInstance() {
+        return null == instance ? instance = new EmployeeDaoImpl() : instance;
     }
     //-----------------------------//
 
@@ -27,18 +28,18 @@ public class EmployeeDaoImpl implements EmployeeDao {
         Transaction transaction = null;
         Session session = null;
 
-        try{
+        try {
             session = HibernateUtil.getSession(HibernateUtilType.EMPLOYEE);
             transaction = session.beginTransaction();
             session.persist(employee);
             session.getTransaction().commit();
-        }catch (Exception ex) {
-            if (transaction!= null){
+        } catch (Exception ex) {
+            if (transaction != null) {
                 transaction.rollback();
             }
             ex.printStackTrace();
-        }finally {
-            if(session != null){
+        } finally {
+            if (session != null) {
                 session.close();
             }
         }
@@ -54,14 +55,14 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
             String SQL = "FROM employee";
 
-            return session.createQuery(SQL,EmployeeEntity.class).getResultList();
+            return session.createQuery(SQL, EmployeeEntity.class).getResultList();
         } catch (Exception ex) {
-            if (transaction!= null){
+            if (transaction != null) {
                 transaction.rollback();
             }
             ex.printStackTrace();
-        }finally {
-            if(session != null){
+        } finally {
+            if (session != null) {
                 session.close();
             }
         }

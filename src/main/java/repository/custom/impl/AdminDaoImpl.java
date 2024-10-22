@@ -15,10 +15,11 @@ public class AdminDaoImpl implements AdminDao {
     //--------Singleton----------//
     private static AdminDaoImpl instance;
 
-    private AdminDaoImpl(){}
+    private AdminDaoImpl() {
+    }
 
-    public static AdminDaoImpl getInstance(){
-        return null==instance?instance = new AdminDaoImpl():instance;
+    public static AdminDaoImpl getInstance() {
+        return null == instance ? instance = new AdminDaoImpl() : instance;
     }
     //-----------------------------//
 
@@ -27,22 +28,22 @@ public class AdminDaoImpl implements AdminDao {
         Transaction transaction = null;
         Session session = null;
 
-        try{
+        try {
             session = HibernateUtil.getSession(HibernateUtilType.ADMIN);
             transaction = session.beginTransaction();
             session.persist(admin);
             session.getTransaction().commit();
-        }catch (Exception ex) {
-            if (transaction!= null){
+        } catch (Exception ex) {
+            if (transaction != null) {
                 transaction.rollback();
             }
             ex.printStackTrace();
-        }finally {
-            if(session != null){
+        } finally {
+            if (session != null) {
                 session.close();
             }
         }
-}
+    }
 
     @Override
     public List<AdminEntity> getAll() {
@@ -57,12 +58,12 @@ public class AdminDaoImpl implements AdminDao {
 
             return session.createQuery(SQL, AdminEntity.class).getResultList();
         } catch (Exception ex) {
-            if (transaction!= null){
+            if (transaction != null) {
                 transaction.rollback();
             }
             ex.printStackTrace();
-        }finally {
-            if(session != null){
+        } finally {
+            if (session != null) {
                 session.close();
             }
         }

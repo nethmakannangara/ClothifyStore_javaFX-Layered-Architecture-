@@ -2,6 +2,7 @@ package utill;
 
 import entity.AdminEntity;
 import entity.EmployeeEntity;
+import entity.ItemEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -28,6 +29,13 @@ public class HibernateUtil {
             case EMPLOYEE -> {
                 metaData = new MetadataSources(build)
                         .addAnnotatedClass(EmployeeEntity.class)
+                        .getMetadataBuilder()
+                        .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
+                        .build();
+            }
+            case ITEM -> {
+                metaData = new MetadataSources(build)
+                        .addAnnotatedClass(ItemEntity.class)
                         .getMetadataBuilder()
                         .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                         .build();

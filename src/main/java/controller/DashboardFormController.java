@@ -37,14 +37,14 @@ public class DashboardFormController {
 
     @FXML
     void btnAddItemOnAction(ActionEvent event) {
-//        Stage itemStage;
-//        try {
-//            itemStage = new Stage();
-//            itemStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/item_form.fxml"))));
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//        itemStage.show();
+        Stage itemStage;
+        try {
+            itemStage = new Stage();
+            itemStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/item_form.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        itemStage.show();
 
     }
 

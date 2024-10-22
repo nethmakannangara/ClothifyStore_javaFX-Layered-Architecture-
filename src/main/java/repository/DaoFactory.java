@@ -2,6 +2,7 @@ package repository;
 
 import repository.custom.impl.AdminDaoImpl;
 import repository.custom.impl.EmployeeDaoImpl;
+import repository.custom.impl.ItemDaoImpl;
 import utill.DaoType;
 
 public class DaoFactory {
@@ -19,6 +20,7 @@ public class DaoFactory {
         switch (type){
             case ADMIN : return (T) AdminDaoImpl.getInstance();
             case EMPLOYEE:return (T) EmployeeDaoImpl.getInstance();
+            case ITEM:return (T) ItemDaoImpl.getInstance();
         }
         return null;
     }
