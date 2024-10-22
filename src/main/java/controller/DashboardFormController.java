@@ -75,13 +75,13 @@ public class DashboardFormController {
     }
 
     public void btnAddEmployeeOnAction(ActionEvent actionEvent) {
-//        Stage employeeFromStage;
-//        try {
-//            employeeFromStage = new Stage();
-//            employeeFromStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/add_employee_from.fxml"))));
-//            employeeFromStage.show();
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
+        Stage employeeFromStage;
+        try {
+            employeeFromStage = new Stage();
+            employeeFromStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/add_employee_form.fxml"))));
+            employeeFromStage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

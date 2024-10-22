@@ -41,20 +41,27 @@ public class AdminServiceImpl implements AdminService {
         String lastId = null;
         List<AdminEntity> resultSet = adminDao.getAll();
 
-        lastId = new ModelMapper().map(resultSet.getLast(),Admin.class).getAdminId();
+        if (resultSet.isEmpty()){
+            lastId = new ModelMapper().map(resultSet.getLast(),Admin.class).getAdminId();
+        }
 
         return lastId;
     }
 
     public String generateId() {
         String adminId = "1";
-        Scanner id = new Scanner(checkLastId());
-        id.useDelimiter("[A-Z]");
-        while (id.hasNext()){
-            adminId = id.next();
+        if(checkLastId()==null){
+            Scanner id = new Scanner(checkLastId());
+            id.useDelimiter("[A-Z]");
+            while (id.hasNext()){
+                adminId = id.next();
+            }
+            int adminCount = Integer.parseInt(adminId);
+            return String.format("A%04d", ++adminCount);
+        }else {
+            int adminCount = Integer.parseInt(adminId);
+            return String.format("A%04d", adminCount);
         }
-        int adminCount = Integer.parseInt(adminId);
-        return String.format("A%04d", ++adminCount);
     }
 
     @Override

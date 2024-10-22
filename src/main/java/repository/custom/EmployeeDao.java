@@ -1,4 +1,7 @@
 package repository.custom;
 
-public interface EmployeeDao {
+import entity.EmployeeEntity;
+import repository.CrudDao;
+
+public interface EmployeeDao extends CrudDao<EmployeeEntity> {
 }
