@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="736.0" prefWidth="975.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainDashboardFromController">
+   <children>
+      <FlowPane alignment="TOP_CENTER" layoutX="552.0" layoutY="23.0" prefHeight="693.0" prefWidth="412.0" style="-fx-background-color: #212529; -fx-background-radius: 20;" AnchorPane.bottomAnchor="6.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="6.0">
+         <children>
+            <FlowPane alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="302.0" prefWidth="354.0" style="-fx-background-color: #495057; -fx-background-radius: 8;">
+               <children>
+                  <ImageView fitHeight="173.0" fitWidth="329.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/shop-image.jpg" />
+                     </image>
+                     <FlowPane.margin>
+                        <Insets top="10.0" />
+                     </FlowPane.margin>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="69.0" prefWidth="313.0" text="9:28 AM" textFill="#e9ecef">
+                     <font>
+                        <Font name="Lucida Bright" size="40.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="339.0" text="Thursday,October 2024" textFill="#e9ecef">
+                     <font>
+                        <Font name="Lucida Bright" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <FlowPane.margin>
+                  <Insets top="20.0" />
+               </FlowPane.margin>
+            </FlowPane>
+         </children>
+      </FlowPane>
+      <Label alignment="CENTER" layoutX="84.0" layoutY="44.0" prefHeight="80.0" prefWidth="419.0" text="Chic &amp; Cozy" AnchorPane.leftAnchor="84.0" AnchorPane.rightAnchor="472.0" AnchorPane.topAnchor="44.0">
+         <font>
+            <Font name="Poor Richard" size="64.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="84.0" layoutY="131.0" prefHeight="46.0" prefWidth="431.0" text="Always blending style with comfort" AnchorPane.leftAnchor="84.0" AnchorPane.rightAnchor="472.0" AnchorPane.topAnchor="131.0">
+         <font>
+            <Font name="Mongolian Baiti" size="22.0" />
+         </font>
+      </Label>
+      <FlowPane alignment="CENTER" layoutX="60.0" layoutY="218.0" prefHeight="461.0" prefWidth="467.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="448.0" AnchorPane.topAnchor="218.0">
+         <children>
+            <FlowPane alignment="TOP_CENTER" prefHeight="342.0" prefWidth="363.0" style="-fx-background-color: #adb5bd; -fx-background-radius: 18;">
+               <children>
+                  <Label alignment="CENTER" prefHeight="75.0" prefWidth="256.0" text="Login" textFill="#212529">
+                     <font>
+                        <Font name="Lucida Bright Italic" size="34.0" />
+                     </font>
+                  </Label>
+                  <Line endX="217.7928924560547" endY="-2.071068048477173" startX="-100.0" />
+                  <JFXButton fx:id="btnAdminLogin" onAction="#btnAdminLoginOnAction" prefHeight="46.0" prefWidth="249.0" text="Admin Login">
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/admin-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Maiandra GD" size="18.0" />
+                     </font>
+                     <FlowPane.margin>
+                        <Insets top="40.0" />
+                     </FlowPane.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="btnUserLogin" layoutX="67.0" layoutY="124.0" onAction="#btnUserLoginOnAction" prefHeight="46.0" prefWidth="249.0" text="User Login">
+                     <font>
+                        <Font name="Maiandra GD" size="18.0" />
+                     </font>
+                     <FlowPane.margin>
+                        <Insets top="40.0" />
+                     </FlowPane.margin>
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/emploee-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <FlowPane.margin>
+                  <Insets />
+               </FlowPane.margin>
+            </FlowPane>
+         </children>
+      </FlowPane>
+      <FlowPane alignment="TOP_CENTER" layoutX="14.0" layoutY="685.0" prefHeight="16.0" prefWidth="536.0" AnchorPane.bottomAnchor="27.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="425.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="174.0" text="solution developed by ">
+               <font>
+                  <Font name="Lucida Sans Typewriter Regular" size="12.0" />
+               </font>
+            </Label>
+            <Label prefHeight="24.0" prefWidth="130.0" text="Nethma Kannangara" textFill="#ff595e">
+               <font>
+                  <Font name="Pristina" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </FlowPane>
+   </children>
+</AnchorPane>

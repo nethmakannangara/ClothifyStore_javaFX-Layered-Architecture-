@@ -7,11 +7,8 @@ import org.modelmapper.ModelMapper;
 import repository.DaoFactory;
 import repository.custom.AdminDao;
 import service.custom.AdminService;
-import utill.CrudUtil;
 import utill.DaoType;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -50,7 +47,7 @@ public class AdminServiceImpl implements AdminService {
 
     public String generateId() {
         String adminId = "1";
-        if(checkLastId()==null){
+        if(checkLastId()!=null){
             Scanner id = new Scanner(checkLastId());
             id.useDelimiter("[A-Z]");
             while (id.hasNext()){

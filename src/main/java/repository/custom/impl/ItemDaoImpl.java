@@ -1,15 +1,10 @@
 package repository.custom.impl;
 
 import dto.Item;
-import entity.AdminEntity;
-import entity.EmployeeEntity;
 import entity.ItemEntity;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import repository.custom.ItemDao;
-import utill.CrudUtil;
 import utill.HibernateUtil;
 import utill.HibernateUtilType;
 
@@ -112,23 +107,24 @@ public class ItemDaoImpl implements ItemDao {
     }
 
     public Item search(String itemCode){
-        String SQL = "SELECT * FROM item WHERE itemCode = ?";
-        Item searchItem = null ;
-        try {
-            ResultSet resultSet = CrudUtil.execute(SQL, itemCode);
-            while (resultSet.next()){
-                searchItem = new Item(
-                        resultSet.getString("itemCode"),
-                        resultSet.getString("description"),
-                        resultSet.getDouble("unitPrice"),
-                        resultSet.getString("size"),
-                        resultSet.getInt("qtyOnHand")
-                );
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return searchItem;
+//        String SQL = "SELECT * FROM item WHERE itemCode = ?";
+//        Item searchItem = null ;
+//        try {
+//            ResultSet resultSet = CrudUtil.execute(SQL, itemCode);
+//            while (resultSet.next()){
+//                searchItem = new Item(
+//                        resultSet.getString("itemCode"),
+//                        resultSet.getString("description"),
+//                        resultSet.getDouble("unitPrice"),
+//                        resultSet.getString("size"),
+//                        resultSet.getInt("qtyOnHand")
+//                );
+//            }
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//        return searchItem;
+        return null;
     }
 
     @Override
