@@ -1,9 +1,6 @@
 package repository;
 
-import repository.custom.impl.AdminDaoImpl;
-import repository.custom.impl.EmployeeDaoImpl;
-import repository.custom.impl.ItemDaoImpl;
-import repository.custom.impl.SupplierDaoImpl;
+import repository.custom.impl.*;
 import utill.DaoType;
 
 public class DaoFactory {
@@ -23,6 +20,8 @@ public class DaoFactory {
             case EMPLOYEE:return (T) EmployeeDaoImpl.getInstance();
             case ITEM:return (T) ItemDaoImpl.getInstance();
             case SUPPLIER:return (T) SupplierDaoImpl.getInstance();
+            case ORDERS:return (T) OrdersDaoImpl.getInstance();
+            case PLACEORDER:return (T) PlaceOrderDaoImpl.getInstance();
         }
         return null;
     }

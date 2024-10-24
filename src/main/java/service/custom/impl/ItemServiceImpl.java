@@ -65,7 +65,7 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public Item search(String itemCode) {
-        return null;
+        return new ModelMapper().map(itemDao.search(itemCode),Item.class);
     }
 
     public String checkLastId() {

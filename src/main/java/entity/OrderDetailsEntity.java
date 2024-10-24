@@ -1,5 +1,9 @@
 package entity;
 
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.*;
 
 @Getter
@@ -7,9 +11,12 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Entity
+@Table
 public class OrderDetailsEntity {
-    private String orderId;
-    private String itemCode;
+    @EmbeddedId
+    private OrderDetailsId id;
+
     private String size;
     private Integer quantity;
     private Integer discount;

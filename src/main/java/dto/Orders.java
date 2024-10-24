@@ -2,7 +2,7 @@ package dto;
 
 import lombok.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Getter
@@ -12,8 +12,9 @@ import java.util.List;
 @ToString
 public class Orders {
     private String orderId;
-    private Date orderDate;
+    private LocalDate orderDate;
     private String employeeId;
     private String paymentType;
+    private double amount;
     List<OrderDetails> orderDetailsList;
 }

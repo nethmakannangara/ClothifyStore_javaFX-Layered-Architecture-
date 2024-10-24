@@ -70,7 +70,7 @@ public class AddEmployeeFormController implements Initializable {
                     Base64.getEncoder().encodeToString(txtEmployeePassword.getText().getBytes()),
                     gender
             ));
-        } else if (btnRadioMale.isSelected()==false) {
+        } else if (btnRadioMale.isSelected()==false && btnRadioFemale.isSelected()==false) {
             new Alert(Alert.AlertType.ERROR,"Please select gender").show();
         }
     }

@@ -38,9 +38,9 @@ public class EmployeeServiceImpl implements EmployeeService {
         List<EmployeeEntity> resultSet = employeeDao.getAll();
 
         if(!resultSet.isEmpty()){
-            lastId = new ModelMapper().map(resultSet.getLast(), Admin.class).getAdminId();
-        }
 
+            lastId = new ModelMapper().map(resultSet.getLast(), Employee.class).getEmployeeId();
+        }
         return lastId;
     }
 
